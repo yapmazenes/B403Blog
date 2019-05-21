@@ -1,0 +1,11 @@
+﻿@model IEnumerable<B403Blog.Models.Kategori>
+@using B403Blog.Models
+<div class="sidebox widget">
+    <h3 class="widget-title section-title">Kategoriler</h3>
+    <ul class="circled">
+        @foreach (Kategori item in Model)
+        {
+            <li><a href="/Kategori/Index/@item.KategoriId">@item.Adi (@item.Makales.Count())</a></li>
+        }
+    </ul>
+</div>

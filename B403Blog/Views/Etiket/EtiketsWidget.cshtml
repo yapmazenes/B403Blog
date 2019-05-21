@@ -1,0 +1,14 @@
+﻿@model IEnumerable<B403Blog.Models.Etiket>
+@using B403Blog.Models
+
+<div class="sidebox widget">
+    <h3 class="widget-title section-title">Etiketler</h3>
+    <ul class="tag-list">
+         @foreach (Etiket item in Model)
+         {
+             <li><a href="/Etiket/Index/@item.EtiketId">@item.Adi (@item.Makales.Count())</a></li>
+         } 
+    </ul>
+    <!-- /.tag-list -->
+
+</div>

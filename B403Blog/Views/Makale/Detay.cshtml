@@ -1,0 +1,188 @@
+﻿@model B403Blog.Models.Makale
+@using B403Blog.Models
+
+@{
+    ViewBag.Title = Model.Baslik;
+}
+@section head{
+    @*<script src="~/Content/jquery-1.8.3.min.js"></script>*@
+    <script>
+        $(document).ready(function () {
+            var makaleid =@Model.MakaleId
+            setTimeout(function () {
+                $.ajax({
+                    type: "get",
+                    url: "/Makale/View/" + makaleid
+                });
+            }, 15000);
+
+            $(".takipet").click(function () {
+
+                var kname = $(this).data("kname");
+                var yazarid = $(this).data("yid");
+                $.ajax({
+                    type: "get",
+                    url: "/Uye/TakipEt",
+                    data: { kadi: kname, yid: yazarid },
+                    success: function () {
+                        location.reload();
+                        //alert("eklendi");
+                        //$("#takip").attr("src", "/Content/image/followokey.png")
+                        //$(this).attr("title", "Takipten çık");
+                        //$(this).attr("id", "takipcik");
+                    },
+                    error: function () {
+                        alert("hata");
+                    }
+                });
+
+
+
+            });
+            //------------------
+            $(".takipcik").click(function () {
+
+                var kid = $(this).data("kname");
+
+                var yazarid = $(this).data("yid");
+                $.ajax({
+                    type: "get",
+                    url: "/Uye/Takipcik",
+                    data: { kadi: kid, yid: yazarid },
+                    success: function () {
+                        location.reload();
+                        //alert("silindi");
+                        //$("#takip").attr("src", "/Content/image/follow.png")
+                        //$(this).attr("title", "Takip et");
+                        //$(this).attr("id", "takipet");
+
+
+                    },
+                    error: function () {
+                        alert("hata");
+                    }
+                });
+
+
+
+            });
+
+        });
+
+
+    </script>
+}
+<div class="blog-posts classic-blog single">
+    <div class="post format-image">
+        <div class="meta">
+            <span class="date">@Model.EklenmeTarihi</span><span class="categories">
+                <a href="/Kategori/Index/@Model.KategoriID">@Model.Kategori.Adi</a>
+            </span>
+            <span class="comments"><a href="#Yorum">@Model.Yorums.Count <i class="icon-chat-1"></i></a></span>
+        </div>
+        <h1 class="post-title">@Model.Baslik</h1>
+        <figure class="main">
+            <img src="@Model.Resim.BuyukBoyut" alt="@Model.Baslik" />
+        </figure>
+        <div class="post-content">
+            <p>@Model.İcerik</p>
+            <div class="meta tags">
+
+
+                @foreach (Etiket etk in Model.Etikets)
+                {
+                    <a href="/Etiket/Index/@etk.EtiketId"> @etk.Adi </a>
+                }
+
+
+            </div>
+            <div class="click-share">
+                <ul>
+                    <li><a class="btn share-facebook" href="#">Beğen</a></li>
+                    <li><a class="btn share-twitter" href="#">Tweet</a></li>
+                    <li><a class="btn share-pinterest" href="#">Pin it</a></li>
+                </ul>
+            </div>
+            <!-- /.share-links -->
+
+        </div>
+    </div>
+    <!-- /.post -->
+
+</div>
+<!-- /.blog-posts -->
+
+<div class="about-author dark-wrapper">
+    <div class="author-image"> <img alt="@Model.Kullanici.Adi" src="@Model.Kullanici.Resim.OrtaBoyut" /> </div>
+    <div class="author-details">
+        <h3>@Model.Kullanici.Adi @Model.Kullanici.Soyadi Hakkında</h3>
+        <p>@Model.Kullanici.Aciklama</p>
+
+        <ul class="social">
+            <li><a href="#"><i class="icon-s-twitter"></i></a></li>
+            <li><a href="#"><i class="icon-s-facebook"></i></a></li>
+            <li><a href="#"><i class="icon-s-pinterest"></i></a></li>
+            <li><a href="#"><i class="icon-s-dribbble"></i></a></li>
+            <li><a href="#"><i class="icon-s-linkedin"></i></a></li>
+            @if (User.Identity.IsAuthenticated)
+            {
+                if (ViewBag.TakipEdiliyorMu)
+                {
+                    <li><a class="takipcik" title="Takipten Çık" data-kname="@User.Identity.Name" data-yid="@Model.YazarID" href="javascript:void(0);"><i class="icon" style="background-color:greenyellow"><img id="takip" src="~/Content/image/followokey.png" /></i></a></li>
+                }
+                else
+                {
+                    <li><a class="takipet" title="Takip Et" data-kname="@User.Identity.Name" data-yid="@Model.YazarID" href="javascript:void(0);"><i class="icon" style="background-color:greenyellow"><img id="takip" src="~/Content/image/follow.png" /></i></a></li>
+                }
+
+
+            }
+
+
+        </ul>
+    </div>
+    <div class="clearfix"></div>
+</div>
+<div class="divide100"></div>
+<div id="comments">
+    <h3>@Model.Yorums.Count</h3>
+    <ol id="singlecomments" class="commentlist">
+        @foreach (Yorum yrm in Model.Yorums)
+        {
+        <li>
+            <div class="comment-wrapper">
+                <div class="user"><img alt="" src="/Content/image/defaultUser.png" class="avatar" /></div>
+                <div class="message">
+                    <div class="arrow-box">
+                        <div class="info">
+                            <h2><a href="#">@yrm.AdSoyad</a></h2>
+                            <div class="meta"> <span class="date">@yrm.EklenmeTarihi.Value</span>  </div>
+                        </div>
+                        <p>@yrm.Yorum1</p>
+                    </div>
+                </div>
+            </div>
+        </li>
+        }
+    </ol>
+</div>
+<a id="Yorum" />
+<!-- /#comments -->
+<div class="divide100"></div>
+<div class="comment-form-wrapper">
+    <h3>Düşüncelerini paylaşmak istermisin?</h3>
+    <p>E-Mail adresiniz yayınlanmayacaktır.Zorunlu alanlar * ile işaretlenmiştir.</p>
+    <form class="comment-form" action="/Makale/YorumYaz" method="get">
+        <input type="hidden" name="MakaleID" value="@Model.MakaleId" />
+        <div class="name-field">
+            <label><i class="icon-user"></i></label>
+            <input type="text" name="AdSoyad" placeholder="İsim Soyisim*" />
+        </div>
+
+        <div class="message-field">
+            <textarea name="Yorum1" id="textarea" rows="5" cols="30" placeholder="Yorumunuzu buraya giriniz..."></textarea>
+        </div>
+        <input type="submit" value="Gönder" name="submit" class="btn btn-submit" />
+    </form>
+</div>
+<!-- /.comment-form-wrapper --> 

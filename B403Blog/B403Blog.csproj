@@ -1,0 +1,399 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A27FF36E-A54B-4B38-9FF8-6E19859D80D1}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>B403Blog</RootNamespace>
+    <AssemblyName>B403Blog</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Mvc.FixedDisplayModes, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.FixedDisplayModes.1.0.0\lib\net40\Microsoft.Web.Mvc.FixedDisplayModes.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.30506.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.30506.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.30506.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.30506.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.30506.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Classes\CustomRoleProvider.cs" />
+    <Compile Include="App_Classes\Settings.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\EtiketController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\KategoriController.cs" />
+    <Compile Include="Controllers\KullaniciController.cs" />
+    <Compile Include="Controllers\MakaleController.cs" />
+    <Compile Include="Controllers\UyeController.cs" />
+    <Compile Include="Controllers\YazarController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\B403Blog.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>B403Blog.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\B403Blog.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>B403Blog.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\B403Blog.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>B403Blog.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Etiket.cs">
+      <DependentUpon>B403Blog.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Kategori.cs">
+      <DependentUpon>B403Blog.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Kullanici.cs">
+      <DependentUpon>B403Blog.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\KullaniciRol.cs">
+      <DependentUpon>B403Blog.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Makale.cs">
+      <DependentUpon>B403Blog.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Resim.cs">
+      <DependentUpon>B403Blog.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Rol.cs">
+      <DependentUpon>B403Blog.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sysdiagram.cs">
+      <DependentUpon>B403Blog.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Yorum.cs">
+      <DependentUpon>B403Blog.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Content Include="Content\blog-post.html" />
+    <Content Include="Content\blog.html" />
+    <Content Include="Content\image\defaultUser.png" />
+    <Content Include="Content\image\follow.png" />
+    <Content Include="Content\image\followokey.png" />
+    <Content Include="Content\image\like.png" />
+    <Content Include="Content\image\view.png" />
+    <Content Include="Content\jquery-1.8.3.min.js" />
+    <Content Include="Content\MakaleResim\BuyukBoyut\csharp.jpg" />
+    <Content Include="Content\MakaleResim\BuyukBoyut\iphone6-select-2014.jpg" />
+    <Content Include="Content\MakaleResim\KucukBoyut\c.png" />
+    <Content Include="Content\MakaleResim\KucukBoyut\iphone6-select-2014.jpg" />
+    <Content Include="Content\MakaleResim\OrtaBoyut\cOrta.jpg" />
+    <Content Include="Content\MakaleResim\OrtaBoyut\iphone6-select-2014.jpg" />
+    <Content Include="Content\style.css" />
+    <Content Include="Content\style\images\blank.gif" />
+    <Content Include="Content\style\images\closedhand.cur" />
+    <Content Include="Content\style\images\favicon.png" />
+    <Content Include="Content\style\images\icons\icon-arrows.png" />
+    <Content Include="Content\style\images\icons\icon-bag.png" />
+    <Content Include="Content\style\images\icons\icon-basket.png" />
+    <Content Include="Content\style\images\icons\icon-board.png" />
+    <Content Include="Content\style\images\icons\icon-book.png" />
+    <Content Include="Content\style\images\icons\icon-box.png" />
+    <Content Include="Content\style\images\icons\icon-browser.png" />
+    <Content Include="Content\style\images\icons\icon-calculator.png" />
+    <Content Include="Content\style\images\icons\icon-calendar.png" />
+    <Content Include="Content\style\images\icons\icon-camera.png" />
+    <Content Include="Content\style\images\icons\icon-card.png" />
+    <Content Include="Content\style\images\icons\icon-clock.png" />
+    <Content Include="Content\style\images\icons\icon-cloud.png" />
+    <Content Include="Content\style\images\icons\icon-coffee.png" />
+    <Content Include="Content\style\images\icons\icon-comment.png" />
+    <Content Include="Content\style\images\icons\icon-compas.png" />
+    <Content Include="Content\style\images\icons\icon-count.png" />
+    <Content Include="Content\style\images\icons\icon-disk.png" />
+    <Content Include="Content\style\images\icons\icon-diskette.png" />
+    <Content Include="Content\style\images\icons\icon-download.png" />
+    <Content Include="Content\style\images\icons\icon-drop.png" />
+    <Content Include="Content\style\images\icons\icon-film.png" />
+    <Content Include="Content\style\images\icons\icon-flag.png" />
+    <Content Include="Content\style\images\icons\icon-graph.png" />
+    <Content Include="Content\style\images\icons\icon-heart.png" />
+    <Content Include="Content\style\images\icons\icon-help.png" />
+    <Content Include="Content\style\images\icons\icon-home.png" />
+    <Content Include="Content\style\images\icons\icon-iu.png" />
+    <Content Include="Content\style\images\icons\icon-letter.png" />
+    <Content Include="Content\style\images\icons\icon-lock.png" />
+    <Content Include="Content\style\images\icons\icon-mail.png" />
+    <Content Include="Content\style\images\icons\icon-money.png" />
+    <Content Include="Content\style\images\icons\icon-music.png" />
+    <Content Include="Content\style\images\icons\icon-news.png" />
+    <Content Include="Content\style\images\icons\icon-notes.png" />
+    <Content Include="Content\style\images\icons\icon-officephone.png" />
+    <Content Include="Content\style\images\icons\icon-openmail.png" />
+    <Content Include="Content\style\images\icons\icon-phone.png" />
+    <Content Include="Content\style\images\icons\icon-phone2.png" />
+    <Content Include="Content\style\images\icons\icon-photo.png" />
+    <Content Include="Content\style\images\icons\icon-portfolio.png" />
+    <Content Include="Content\style\images\icons\icon-print.png" />
+    <Content Include="Content\style\images\icons\icon-radio.png" />
+    <Content Include="Content\style\images\icons\icon-ribbon.png" />
+    <Content Include="Content\style\images\icons\icon-safe.png" />
+    <Content Include="Content\style\images\icons\icon-search.png" />
+    <Content Include="Content\style\images\icons\icon-shop.png" />
+    <Content Include="Content\style\images\icons\icon-statistics.png" />
+    <Content Include="Content\style\images\icons\icon-tablet.png" />
+    <Content Include="Content\style\images\icons\icon-ticket.png" />
+    <Content Include="Content\style\images\icons\icon-truck.png" />
+    <Content Include="Content\style\images\icons\icon-tv.png" />
+    <Content Include="Content\style\images\icons\icon-upload.png" />
+    <Content Include="Content\style\images\icons\icon-user.png" />
+    <Content Include="Content\style\images\icons\icon-view.png" />
+    <Content Include="Content\style\images\icons\icon-voicemail.png" />
+    <Content Include="Content\style\images\icons\icon-wallet.png" />
+    <Content Include="Content\style\images\icons\icon-weather.png" />
+    <Content Include="Content\style\images\icons\icon-web.png" />
+    <Content Include="Content\style\images\icons\icon-worldmap%402x.png" />
+    <Content Include="Content\style\images\icons\icon-worldmap.png" />
+    <Content Include="Content\style\images\logo.png" />
+    <Content Include="Content\style\images\openhand.cur" />
+    <Content Include="Content\YazarResim\hakkibulut.jpg" />
+    <Content Include="Global.asax" />
+    <Content Include="Models\B403Blog.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>B403Blog.edmx</DependentUpon>
+      <LastGenOutput>B403Blog.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\B403Blog.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>B403Blog.edmx</DependentUpon>
+      <LastGenOutput>B403Blog.cs</LastGenOutput>
+    </Content>
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Content\style\css\color\" />
+    <Folder Include="Content\style\css\images\" />
+    <Folder Include="Content\style\images\art\" />
+    <Folder Include="Content\style\js\fancybox\helpers\" />
+    <Folder Include="Content\style\js\google-code-prettify\" />
+    <Folder Include="Content\style\type\bebas\" />
+    <Folder Include="Content\style\type\budicons\" />
+    <Folder Include="Content\style\type\fontello\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_Layout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\_viewstart.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Kategori\KategoriWidget.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Etiket\EtiketsWidget.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\SiteHakkinda.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\PopulerMakalelerWidget.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\MakaleListeleWidget.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Kategori\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Arama.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Etiket\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Makale\Detay.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Kullanici\GirisYap.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="Models\B403Blog.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>B403Blog.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Models\B403Blog.edmx.diagram">
+      <DependentUpon>B403Blog.edmx</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Kullanici\UyeOl.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Yazar\YazarOl.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Admin\YazarOnaylari.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Makale\Ekle.cshtml" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>14149</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:14149/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

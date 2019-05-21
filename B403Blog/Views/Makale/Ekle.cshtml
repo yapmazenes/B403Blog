@@ -1,0 +1,51 @@
+﻿@{
+    ViewBag.Title = "Ekle";
+}
+@using B403Blog.Models
+<form action="/Makale/Ekle" enctype="multipart/form-data" method="post">
+    <table>
+        <tr>
+            <td>Başlık : </td>
+            <td><input type="text" name="Baslik" value=" " /> </td>
+        </tr>
+        <tr>
+            <td>İçerik : </td>
+            <td>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"></span>
+                    </div>
+                    <textarea name="İcerik" class="form-control" aria-label="With textarea" style="margin-top: 0px; margin-bottom: 0px; height: 123px;"></textarea>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>Kategori : </td>
+
+            <td>
+                <select name="KategoriID">
+                    @foreach (Kategori ktg in ViewBag.Kategori)
+                    {
+                        <option value="@ktg.KategoriId">@ktg.Adi</option>
+                    }
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Etiket : </td>
+
+            <td>
+                <input type="text" name="etikets" value="" placeholder="Kelime aralarına virgül yerleştirin" />
+            </td>
+        </tr>
+        <tr>
+            <td>Resim : </td>
+            <td><input type="file" name="image" value=" " /> </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" name="buton" value="Ekle" /> </td>
+        </tr>
+    </table>
+
+</form>

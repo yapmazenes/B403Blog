@@ -1,0 +1,14 @@
+Makale iþlemleri
+Anasayfa da Makale Listelenmeli
+Makale yorumlarý
+makalenin etiketi olmalý 
+makalenin kategorisi olmalý 
+Makalenin görüntülenme sayýsý olmalý
+Makale resimleri olmalý
+Makaleler beðenilebilmeli
+kullanýcýlar olmalý
+yazarlar olmalý
+yazar takip edilebilsin
+Makale sosyal platformlarda paylaþýlabilmeli
+Google Analytics
+Aktif Kullanýcý sayýsý görüntülensin
